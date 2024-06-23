@@ -1,0 +1,5 @@
+select TOP 10 * from RIS_DEVICES_TOKEN
+
+-- update RIS_DEVICES_TOKEN
+-- set Scaduto = 0
+where CodiceAbi = '03599' and TokenValue = 'B4604BD4-3399-4217-8822-C7E0AECE26B1'

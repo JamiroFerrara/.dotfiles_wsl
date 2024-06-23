@@ -1,0 +1,88 @@
+#!/bin/zsh
+
+# [[ Run ]]
+# If one argument is passed, run the script with that name
+# If no arguments are passed, use fzf to search the scripts folder
+# and then run the script
+function r() {
+    # if one argument passed
+    if [ $# -eq 1 ]; then
+        echo "Running $1"
+        # if file exists
+        if [ -f ./scripts/$1.sh ]; then
+            ./scripts/$1.sh
+        fi
+    else
+        # fzf search the scripts folder and then run the script
+        script=$(exa ./scripts | fzf)
+        if [ -n "$script" ]; then
+            ./scripts/$script
+        fi
+    fi
+}
+
+# [[ Make ]]
+# If one argument is passed, run the script with that name
+# If no arguments are passed, use fzf to list makefile options
+# and then run
+function m() {
+    if [ $# -eq 0 ]; then
+        make_options=$(grep -oP '^[a-zA-Z0-9_-]+(?=:)' Makefile | fzf)
+        make "$make_options"
+    else
+        make "$1"
+    fi
+}
+
+# Makes a directory and then cd into it
+function md() {
+    mkdir $1
+    cd $1
+}
+
+# Searches chrome for the query
+function s() {
+    query="https://www.google.com/search?q="+$*
+    chrome.exe $query
+}
+
+# Searches chrome for the query with lucky search
+function sl() {
+    query="https://duckduckgo.com/?q=!ducky+"+$*
+    chrome.exe $query
+}
+
+# Untar a file
+function utar() {
+    tar xzf $1
+    rm $1
+}
+
+# Create a new script file
+function scr {
+    touch $1.sh
+    chmod +x $1.sh
+    nvim $1.sh
+}
+
+# Backup a file
+function backup() { 
+    cp -- "$1"{,.bak};
+}
+
+# Time the shell startup
+function timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+# Ranger cd
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi  
+    rm -f -- "$tempfile"
+}

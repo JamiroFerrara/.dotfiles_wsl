@@ -1,0 +1,6 @@
+UPDATE WEBAPP_DBCONF
+SET CONNECTION_STR = 'Server=db;Database=TBBASE_3599;MultipleActiveResultSets=true;User ID=sa;Password=!PassworD;TrustServerCertificate=True'
+WHERE 
+APPENV = 'SVIL' AND
+DBTYPE = 'TBBASE' AND
+CONNECTION_PREFIX = 'TBBASE_3599.DBO.'

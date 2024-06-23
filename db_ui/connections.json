@@ -1,0 +1,42 @@
+[
+  {
+    "url": "sqlserver://sa:!PassworD@localhost:1433/CoreDocker?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
+    "name": "CoreDocker"
+  },
+  {
+    "url": "sqlserver://sa:!PassworD@localhost:1433/TBConfig?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
+    "name": "TBConfig"
+  },
+  {
+    "url": "sqlserver://sa:!PassworD@localhost:1433/TBBASE_3599?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
+    "name": "TBBASE_3599"
+  },
+  {
+    "url": "sqlserver://fcAlimSvil:AlliT_aS1@10.130.1.161:1433/TBCONFIG?encrypt=true&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "Allitude-TBConfig-161"
+  },
+  {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.166:1433/TBBASE_H22_8016?encrypt=true&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "Allitude-TBBASE_H22_8016-FCVWSIT1-166"
+  },
+  {
+    "url": "sqlserver://fcAlimSvil:AlliT_aS1@10.130.1.159:1433/TBBASE_H22_8016?encrypt=true&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "Allitude-TBBASE_H22_8016-159"
+  },
+  {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.168:1433/TBCONFIG?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "Allitude-TBCONFIG-168"
+  },
+  {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.166:1433/TBBASE_H22_3599?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "TBBASE_H22_3599-FCVWSIT1-166"
+  },
+  {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.168:1433/TBSICUREZZA?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=true&trustServerCertificate=true",
+    "name": "TBSICUREZZA"
+  },
+  {
+    "url": "mysql://novigo:secret@localhost:3306/novigo",
+    "name": "DETERCHIMICA"
+  }
+]

@@ -1,0 +1,6 @@
+update WEBAPP_DBCONF
+set CONNECTION_STR = 'Server=localhost;Database=TBBASE_3599;MultipleActiveResultSets=true;User ID=sa;Password=!PassworD;TrustServerCertificate=True'
+where APPENV = 'deve' and COD_ABI = '03599' and DBTYPE = 'TBBASE'
+
+select top 200 * from [WEBAPP_DBCONF]
+where APPENV = 'deve'

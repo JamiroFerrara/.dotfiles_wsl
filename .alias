@@ -1,0 +1,49 @@
+#!/bin/zsh
+
+alias aws="aws --endpoint-url https://stiwie-test.s3.eu-central-1.wasabisys.com --no-verify-ssl"
+alias transfer="/home/jferrara/.scripts/aws-transfer.sh"
+
+alias hosts="batcat /mnt/c/Windows/System32/drivers/etc/hosts"
+
+# [Basics]
+alias ls="exa -la --icons"
+alias l="exa -l --icons"
+alias lt="exa -l --tree --level=2 --long --icons -a"
+alias cl="clear"
+alias rm="rm -dfr"
+alias h="history | fzy"
+alias k="cd .. && exa --icons -a"
+alias apt="nala"
+alias q="exit";
+alias cm="cmatrix -C white -u 9";
+alias ra="ranger-cd"
+alias bat="batcat"
+alias cat="bat -P"
+alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
+alias tm="tmux"
+
+# [Make]
+alias M="make"
+alias ml="make local"
+alias mb="make build"
+alias mp="make push"
+
+alias ports='netstat -tulanp'
+
+# [Windows]
+alias op="explorer.exe ."
+alias sh="powershell.exe C://Users/j.ferrara/scripts/shutdown.ps1"
+alias rb="powershell.exe C://Users/j.ferrara/scripts/reboot.ps1"
+
+# [Git]
+alias lg="lazygit"
+alias status="tmux neww git log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gitlines="git diff --stat HEAD~1..HEAD"
+
+# [Nvim]
+alias vi="tmux neww nvim -c 'lua require(\"harpoon.ui\").nav_file(1)'; exit"
+alias vim="nvim -c 'Telescope find_files nvim -c 'lua require(\"harpoon.ui\").nav_file(1)'; exit'"
+alias va="nvim /home/jferrara/vault/"
+
+source /home/jferrara/.scripts/t.sh

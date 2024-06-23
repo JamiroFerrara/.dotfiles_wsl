@@ -1,0 +1,8 @@
+UPDATE RIS_DEVICES_TOKEN 
+SET 
+CodiceUtente = 'CCUBCC'
+where TokenValue = 'B4604BD4-3399-4217-8822-C7E0AECE26B1' and CodiceAbi = '03599' and CodiceUtente = 'CCALLI'
+
+-- SELECT top 10 * from RIS_DEVICES_TOKEN
+-- where TokenValue = 'B4604BD4-3399-4217-8822-C7E0AECE26B1' and CodiceAbi = '03599'
+-- where CodiceUtente = 'CCUBCC' and CodiceAbi = '03599'

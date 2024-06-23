@@ -1,0 +1,11 @@
+select role.roleid, resource.name, permission.privilege from permission
+inner join role
+on role.id = permission.role_id
+inner join resource
+on resource.id = permission.resource_id
+where roleid = 'ROLE_ISPETTORE'
+and name like '%invoice%'
+
+/* select * from user_role */
+/* inner join user on */
+/* id = user_id */

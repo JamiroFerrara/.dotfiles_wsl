@@ -1,0 +1,2 @@
+SELECT * from RIS_USR_APPARTENENZA_3599
+where CodicePro = '0CSSB'

@@ -1,0 +1,176 @@
+    SELECT
+      COUNT(*) OVER() AS TotalCount,
+      CASE WHEN NOT TITOLO_AGGIUNTIVO IS NULL
+      AND TITOLO_AGGIUNTIVO <> '' THEN schedab.SB_Titolo + ' - ' + TITOLO_AGGIUNTIVO ELSE schedab.SB_Titolo END as [TitoloRI],
+      TIPO_APPLICAZIONE AS APPLICAZIONE_AUTOMATICA,
+      TIPO_APPLICAZIONE as TIPOAPPLICAZIONE,
+      TITOLO_AGGIUNTIVO,
+      CASE WHEN esecclo.ID_SOTTOMODULO IS NULL THEN 'No' WHEN esecclo.ID_SOTTOMODULO < 0 THEN 'No' WHEN NOT esecclo.ID_SOTTOMODULO IS NULL THEN 'Si' END as [PresenzaSottomodulo],
+      esecclo.STATO_ESECUZIONE,
+      CASE WHEN esecclo.ID_CORRELAZIONI_USA IS NULL THEN 'No' WHEN NOT esecclo.ID_CORRELAZIONI_USA IS NULL THEN 'Si' END as [Correlazioni],
+      (
+        CASE WHEN cla1.nomegerarchico IS NULL THEN 'Non Classificati' ELSE cla1.nomegerarchico END
+      ) as Classificazione,
+      esecclo.STATO,
+      MAX(esecclo.VERSIONE) AS VERSIONE,
+      esecclo.ID_CFG,
+      esecclo.ID_ESECUZIONE,
+      esecclo.COD_ABI,
+      esecclo.DATA_APPLICAZIONE,
+      CASE WHEN usrChiusura.Descrizione IS NULL THEN esecclo.UTENTE_CHIUSURA WHEN NOT usrChiusura.Descrizione IS NULL THEN usrChiusura.Descrizione END as UTENTE_CHIUSURA,
+      esecclo.DATA_CHIUSURA,
+      ISNULL(NUM_CONT, 0) AS NUM_CONT,
+      ISNULL(NUM_CONTESI, 0) AS NUM_CONTESI,
+      TT.DESCRIZIONE AS COMPETESEC,
+      (
+        SELECT
+          descrizione
+        FROM
+          FCVWSCT1.TBConfig.dbo.CON_DECODIFICA
+        WHERE
+          TIPO = 'drStato'
+          AND CODICE = esecclo.STATO
+      ) AS DESCRSTATO,
+      DATA_RIFERIMENTO,
+      NULL AS STRUTTINTER,
+      CASE WHEN nomiger.Descrizione IS NULL THEN esecclo.ENTITA_ASSEGNATA WHEN NOT nomiger.Descrizione IS NULL THEN nomiger.Descrizione END as ENTITA_ASSEGNATA,
+      esecclo.ENTITA_ASSEGNATA as CODICEPURO_ENTITA_ASSEGNATA,
+      DATA_SCADENZA,
+      Datediff(
+        dd,
+        GETDATE(),
+        DATA_SCADENZA
+      ) as [GGSCADENZA],
+      --COMP_ESEC_U.CHIESITA + '|' + COMP_ESEC_U.CHITUTTO + '|' + COMP_ESEC_U.CHIVEDE as COMPETENZA,
+      --clo.AVVISO_SCADENZA,
+      CAST(
+        ISNULL(NUM_CONT, 0) as varchar
+      ) + '(' + CAST(
+        ISNULL(NUM_CONT, 0) - ISNULL(NUM_CONTESI, 0) as varchar
+      ) + ')' as CONTEGGIO,
+      CASE WHEN esecclo.RISCHIO is NULL THEN pesiFr.RISCHIO + '-' + pesiFr.DES_RISCHIO else esecclo.RISCHIO + '-' + (
+        SELECT
+          top 1 DES_RISCHIO
+        FROM
+          CON_PESI_FREQUENZE_3599
+        WHERE
+          PESO = esecclo.PESO
+          AND FREQUENZA = esecclo.FREQUENZA_RISCHIO
+      ) end as INDICE_RISCHIO,
+      CASE WHEN esecclo.RISCHIO is NULL THEN pesiFr.RISCHIO else esecclo.RISCHIO end as RISCHIO_POTENZIALE,
+      VALUTAZIONE_CONCLUSIVA,
+      ABBATTIMENTO,
+      RISCHIO_RESIDUO,
+      SCORING,
+      NOTE_VALUTAZIONE,
+      CAST(
+        esecclo.STATO_ESECUZIONE as varchar(5)
+      ) as STATO_ESECUZIONE_RI,
+      claAsset.NomeGerarchico AS DES_ASSET,
+      esecclo.FREQUENZA_EFFETTIVA,
+      CASE WHEN esecclo.RISCHIO is NULL THEN pesiFr.PESO else esecclo.PESO end as IMPATTO,
+      CASE WHEN esecclo.RISCHIO is NULL THEN pesiFr.FREQUENZA else esecclo.FREQUENZA_RISCHIO end as FREQUENZA_ATTUALE
+    from
+      [CON_ESECUZIONI_RI_3599] esecclo
+      inner join [CON_CFG_SCHEDARISCHIO_3599] as clo on esecclo.ID_CFG = clo.ID_TESTATA
+      and esecclo.VERSIONE = clo.VERSIONE
+      inner join [CON_CFG_TESTATA_3599] as testa on clo.COD_ABI = testa.COD_ABI
+      and clo.ID_TESTATA = testa.ID
+      and clo.VERSIONE = testa.VERSIONE
+      left join [v_RIS_NOMIGERARCHICI_3599] as nomiger on esecclo.ENTITA_ASSEGNATA = nomiger.CodiceNodo
+      left join [v_RIS_NOMIGERARCHICI_3599] as usrChiusura on 'RIS|' + esecclo.UTENTE_CHIUSURA = usrChiusura.CodiceNodo
+      left outer join [CON_COMPETENZE_ESECUZIONE_3599] CE ON CE.ID_CFG_TESTATA = testa.ID
+      and ce.VERSIONE = testa.VERSIONE
+      left outer join [CON_TESTATA_TABELLE_3599] TT ON CE.ID_TAB_TESTATA = TT.ID
+      inner join [SIOd_SB_SchedaBase_3599] as schedab on testa.SB_GuidOriginale = schedab.SB_GuidOriginale
+      and schedab.SB_Nr_Versione = esecclo.SB_Nr_Versione
+      left join [SIOd_ID_IdentificazioniScheda_3599] cla on cla.ID_SB_Guid = schedab.SB_Guid
+      AND cla.ID_TipoClassificazione = 'P'
+      left join [CLA_NOMIGERARCHICI_3599] cla1 on cla.ID_IdNodo = cla1.CodiceNodo
+      left join [SIOd_CM_CompetenzeScheda_3599] CM on CM.[CM_SB_Guid] = testa.SB_GuidOriginale
+      and CM.[CM_TS05_Id] = testa.COMPETENZA_EFFETTUAZIONE
+      left join [CLA_NOMIGERARCHICI_3599] claRischio on clo.IDENTIFICAZIONE_CATEGORIA = claRischio.CodiceNodo
+      left join [CLA_NOMIGERARCHICI_3599] claAsset on esecclo.ASSET = claAsset.CodiceNodo
+      left join [CON_TIPOLOGIA_RISCHIO_3599] as tipologiaRischio on tipologiaRischio.CODICE = clo.TIPOLOGIA
+      left join CON_PESI_FREQUENZE_3599 as pesiFr on pesiFr.ID = clo.ID_PESO_FREQUENZA
+      left join (
+        select
+          ISNULL(
+            count(*),
+            0
+          ) as NUM_CONT,
+          c.ID_ESECUZIONE,
+          c.VERSIONE
+        from
+          [CON_ESECUZIONI_COLLEGAMENTI_3599] CC
+          inner join [CON_ESECUZIONI_RI_3599] C ON CC.ID_ESECUZIONE_COLLEGATA = C.ID_ESECUZIONE
+        GROUP BY
+          c.ID_ESECUZIONE,
+          c.VERSIONE
+      ) CFGVG ON CFGVG.ID_ESECUZIONE = esecclo.ID_ESECUZIONE
+      left join (
+        select
+          ISNULL(
+            COUNT(
+              distinct(esiti.ID_CFG)
+            ),
+            0
+          ) as NUM_CONTESI,
+          esiti.ID_ESECUZIONE
+        from
+          [CON_ESECUZIONI_COLLEGAMENTI_3599] as esecColl
+          inner join [CON_CFG_CONTROLLI_3599] as conn on esecColl.ID = conn.ID_TESTATA
+          and esecColl.VERSIONE = conn.VERSIONE
+          inner join [CON_VALUTAZIONI_3599] as esiti on esiti.ID_ESECUZIONE = esecColl.ID_ESECUZIONE_COLLEGATA
+          and esiti.ID_CFG = esecColl.ID
+          and esiti.STATO_VALUTAZIONE <> '2'
+        group by
+          esiti.ID_ESECUZIONE
+      ) CFG22 ON CFG22.ID_ESECUZIONE = esecclo.ID_ESECUZIONE
+  WHERE 
+      Classificazione = 'POS|03599|QFYZM4RI9B|0'
+    GROUP BY
+      schedab.SB_Titolo,
+      TIPO_APPLICAZIONE,
+      TITOLO_AGGIUNTIVO,
+      esecclo.ID_SOTTOMODULO,
+      esecclo.ID_CORRELAZIONI_USA,
+      --TIPO_EFFETTUAZIONE ,
+      esecclo.STATO_ESECUZIONE,
+      cla1.nomegerarchico,
+      TT.DESCRIZIONE,
+      esecclo.STATO,
+      esecclo.VERSIONE,
+      esecclo.ID_CFG,
+      esecclo.ID_ESECUZIONE,
+      esecclo.COD_ABI,
+      esecclo.DATA_APPLICAZIONE,
+      esecclo.UTENTE_CHIUSURA,
+      usrChiusura.descrizione,
+      nomiger.Descrizione,
+      esecclo.DATA_CHIUSURA,
+      esecclo.DATA_RIFERIMENTO,
+      esecclo.ENTITA_ASSEGNATA,
+      esecclo.DATA_SCADENZA,
+      --COMP_ESEC_U.CHIESITA,
+      -- COMP_ESEC_U.CHITUTTO,
+      -- COMP_ESEC_U.CHIVEDE,
+      --clo.AVVISO_SCADENZA,
+      NUM_CONT,
+      NUM_CONTESI,
+      VALUTAZIONE_CONCLUSIVA,
+      ABBATTIMENTO,
+      RISCHIO_RESIDUO,
+      SCORING,
+      esecclo.RISCHIO,
+      pesiFr.PESO,
+      pesiFr.FREQUENZA,
+      pesiFr.RISCHIO,
+      pesiFr.DES_RISCHIO,
+      esecclo.PESO,
+      esecclo.FREQUENZA_RISCHIO,
+      esecclo.RISCHIO,
+      NOTE_VALUTAZIONE,
+      claAsset.Nomegerarchico,
+      esecclo.FREQUENZA_EFFETTIVA
+    ORDER BY [DATA_RIFERIMENTO] desc

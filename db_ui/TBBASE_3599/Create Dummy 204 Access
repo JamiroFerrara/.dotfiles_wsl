@@ -1,0 +1,23 @@
+INSERT INTO [dbo].[RIS_USR_APPARTENENZA_3599]
+       ([IdUsrAppartentenza]
+       ,[CodiceABI]
+       ,[CodiceRIS]
+       ,[CodicePro]
+       ,[CodiceAPL]
+       ,[CodiceStruttura]
+       ,[CodicePuro]
+       ,[Tipologia]
+       ,[ModUser]
+       ,[ModDate])
+VALUES
+       (204,
+       '03599',
+       'CC0030',
+       NULL,
+       NULL,
+       'AZI|*|BL|204|ACCESSO',
+
+       'XYZ789',
+       'Some Type',
+       'SomeUser',
+       '2023-02-28 12:34:56')
