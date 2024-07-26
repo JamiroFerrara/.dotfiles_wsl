@@ -1,0 +1,918 @@
+{
+  "page": 1,
+  "values": [
+    {
+      "uuid": "{b037fb68-7107-4b4a-ba8a-a508cb23cfdb}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "FAILED",
+          "type": "pipeline_state_completed_failed"
+        }
+      },
+      "build_number": 1,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-05T16:35:17.17Z",
+      "completed_on": "2020-10-05T16:36:06.95Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "feature/aws-deployment",
+        "selector": {
+          "type": "default"
+        },
+        "commit": {
+          "hash": "debace6c2931d7b170a908ff8ee5330b19608c48",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/debace6c2931d7b170a908ff8ee5330b19608c48"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/debace6c2931d7b170a908ff8ee5330b19608c48"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 43,
+      "build_seconds_used": 43,
+      "first_successful": false,
+      "expired": false,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bb037fb68-7107-4b4a-ba8a-a508cb23cfdb%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bb037fb68-7107-4b4a-ba8a-a508cb23cfdb%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{7330666e-3541-4076-86cf-0a0c07ebabbe}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "FAILED",
+          "type": "pipeline_state_completed_failed"
+        }
+      },
+      "build_number": 2,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-05T16:50:18.738Z",
+      "completed_on": "2020-10-05T16:52:14.748Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "feature/aws-deployment",
+        "selector": {
+          "type": "default"
+        },
+        "commit": {
+          "hash": "cbfbcdfb364ab33fc54cb7428017481c7a747603",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/cbfbcdfb364ab33fc54cb7428017481c7a747603"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/cbfbcdfb364ab33fc54cb7428017481c7a747603"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 102,
+      "build_seconds_used": 102,
+      "first_successful": false,
+      "expired": false,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B7330666e-3541-4076-86cf-0a0c07ebabbe%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B7330666e-3541-4076-86cf-0a0c07ebabbe%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{42238015-8a3e-44e8-8ef7-b82779d88cda}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "SUCCESSFUL",
+          "type": "pipeline_state_completed_successful"
+        }
+      },
+      "build_number": 3,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-05T16:53:09.03Z",
+      "completed_on": "2020-10-05T16:56:02.391Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "feature/aws-deployment",
+        "selector": {
+          "type": "default"
+        },
+        "commit": {
+          "hash": "c461ce94802f097896c9e03e2ed11508ce613eee",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/c461ce94802f097896c9e03e2ed11508ce613eee"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/c461ce94802f097896c9e03e2ed11508ce613eee"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 158,
+      "build_seconds_used": 157,
+      "first_successful": true,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B42238015-8a3e-44e8-8ef7-b82779d88cda%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B42238015-8a3e-44e8-8ef7-b82779d88cda%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{f9bdce9a-1064-414f-a0db-d09a0d58ee22}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "SUCCESSFUL",
+          "type": "pipeline_state_completed_successful"
+        }
+      },
+      "build_number": 4,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-06T09:06:46.095Z",
+      "completed_on": "2020-10-06T09:09:25.223Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "feature/aws-deployment",
+        "selector": {
+          "type": "default"
+        },
+        "commit": {
+          "hash": "042b9e0e9ad94c46bedc18da5d5b9cbbdff1b09c",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/042b9e0e9ad94c46bedc18da5d5b9cbbdff1b09c"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/042b9e0e9ad94c46bedc18da5d5b9cbbdff1b09c"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 143,
+      "build_seconds_used": 142,
+      "first_successful": false,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bf9bdce9a-1064-414f-a0db-d09a0d58ee22%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bf9bdce9a-1064-414f-a0db-d09a0d58ee22%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{b3cc1e30-9d57-4787-a7f1-328cde97d287}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "SUCCESSFUL",
+          "type": "pipeline_state_completed_successful"
+        }
+      },
+      "build_number": 5,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-06T09:30:46.523Z",
+      "completed_on": "2020-10-06T09:52:19.662Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "develop",
+        "selector": {
+          "type": "branches",
+          "pattern": "develop"
+        },
+        "commit": {
+          "hash": "57d3e83ce022e9d892169a7de18e4fd61917660b",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/57d3e83ce022e9d892169a7de18e4fd61917660b"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/57d3e83ce022e9d892169a7de18e4fd61917660b"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "MANUAL",
+        "type": "pipeline_trigger_manual"
+      },
+      "run_number": 2,
+      "duration_in_seconds": 573,
+      "build_seconds_used": 667,
+      "first_successful": true,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bb3cc1e30-9d57-4787-a7f1-328cde97d287%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bb3cc1e30-9d57-4787-a7f1-328cde97d287%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{beab0c42-8ac0-474e-a19f-ec2da59c24b5}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "FAILED",
+          "type": "pipeline_state_completed_failed"
+        }
+      },
+      "build_number": 6,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-06T10:50:36.427Z",
+      "completed_on": "2020-10-06T10:51:27.019Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "feature/aws-deployment",
+        "selector": {
+          "type": "default"
+        },
+        "commit": {
+          "hash": "1ec5f7d6b1220db862a762f450891c17d3f55258",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/1ec5f7d6b1220db862a762f450891c17d3f55258"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/1ec5f7d6b1220db862a762f450891c17d3f55258"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 42,
+      "build_seconds_used": 41,
+      "first_successful": false,
+      "expired": false,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bbeab0c42-8ac0-474e-a19f-ec2da59c24b5%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bbeab0c42-8ac0-474e-a19f-ec2da59c24b5%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{1823ac2e-12d4-4bc0-918a-f9378f45ac49}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "IN_PROGRESS",
+        "type": "pipeline_state_in_progress",
+        "stage": {
+          "name": "PAUSED",
+          "type": "pipeline_state_in_progress_paused"
+        }
+      },
+      "build_number": 7,
+      "creator": {
+        "display_name": "Nicola Marini",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B729b682d-b163-47c3-a955-c7c442875118%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/NM-4.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B729b682d-b163-47c3-a955-c7c442875118%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{729b682d-b163-47c3-a955-c7c442875118}",
+        "account_id": "5e5520d12a59dc0c8fe6044b",
+        "nickname": "n.marini"
+      },
+      "created_on": "2020-10-06T11:07:51.666Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "develop",
+        "selector": {
+          "type": "branches",
+          "pattern": "develop"
+        },
+        "commit": {
+          "hash": "57d3e83ce022e9d892169a7de18e4fd61917660b",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/57d3e83ce022e9d892169a7de18e4fd61917660b"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/57d3e83ce022e9d892169a7de18e4fd61917660b"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 127,
+      "build_seconds_used": 126,
+      "first_successful": false,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B1823ac2e-12d4-4bc0-918a-f9378f45ac49%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B1823ac2e-12d4-4bc0-918a-f9378f45ac49%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{02cfc75b-c637-45d5-bc58-e935e8b4aa90}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "IN_PROGRESS",
+        "type": "pipeline_state_in_progress",
+        "stage": {
+          "name": "PAUSED",
+          "type": "pipeline_state_in_progress_paused"
+        }
+      },
+      "build_number": 8,
+      "creator": {
+        "display_name": "Klaudia Xhika",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7Ba7ee0570-52b2-4a57-a092-386ba7065e71%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5de4d4af05eece0d0920b24a/bad8bcc7-df3d-4440-8bb7-64d4e55b7027/128"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7Ba7ee0570-52b2-4a57-a092-386ba7065e71%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{a7ee0570-52b2-4a57-a092-386ba7065e71}",
+        "account_id": "5de4d4af05eece0d0920b24a",
+        "nickname": "Klaudia Xhika"
+      },
+      "created_on": "2020-10-07T08:04:39.708Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "develop",
+        "selector": {
+          "type": "branches",
+          "pattern": "develop"
+        },
+        "commit": {
+          "hash": "9ef53af5a5f9b4cb74ca1225cf1aa3dc4b15e7a7",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/9ef53af5a5f9b4cb74ca1225cf1aa3dc4b15e7a7"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/9ef53af5a5f9b4cb74ca1225cf1aa3dc4b15e7a7"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 199,
+      "build_seconds_used": 198,
+      "first_successful": false,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B02cfc75b-c637-45d5-bc58-e935e8b4aa90%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B02cfc75b-c637-45d5-bc58-e935e8b4aa90%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{11eb80b5-1a3e-4457-bf2d-1665a09749d4}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "IN_PROGRESS",
+        "type": "pipeline_state_in_progress",
+        "stage": {
+          "name": "PAUSED",
+          "type": "pipeline_state_in_progress_paused"
+        }
+      },
+      "build_number": 9,
+      "creator": {
+        "display_name": "Samuele Colombo",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B4411ef0b-9211-4c55-a7b6-0f27ba15a32a%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/initials/SC-5.png"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7B4411ef0b-9211-4c55-a7b6-0f27ba15a32a%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{4411ef0b-9211-4c55-a7b6-0f27ba15a32a}",
+        "account_id": "5f16a90407efc400284e7e56",
+        "nickname": "Samuele Colombo"
+      },
+      "created_on": "2020-10-08T07:29:45.96Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "release/1.15.0",
+        "selector": {
+          "type": "branches",
+          "pattern": "release/*"
+        },
+        "commit": {
+          "hash": "68b73bb95e63ce949809b2b5ee234f7890b0e71a",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/68b73bb95e63ce949809b2b5ee234f7890b0e71a"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/68b73bb95e63ce949809b2b5ee234f7890b0e71a"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+      "duration_in_seconds": 172,
+      "build_seconds_used": 171,
+      "first_successful": false,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B11eb80b5-1a3e-4457-bf2d-1665a09749d4%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7B11eb80b5-1a3e-4457-bf2d-1665a09749d4%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    },
+    {
+      "uuid": "{edf74168-9430-471f-90bf-ef7c3ee0b19b}",
+      "repository": {
+        "type": "repository",
+        "full_name": "novigo-consulting/deterchimica-be",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be"
+          },
+          "html": {
+            "href": "https://bitbucket.org/novigo-consulting/deterchimica-be"
+          },
+          "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D?ts=default"
+          }
+        },
+        "name": "deterchimica-be",
+        "uuid": "{7db39695-a34d-4b95-9f3d-45ffe55db64b}"
+      },
+      "state": {
+        "name": "COMPLETED",
+        "type": "pipeline_state_completed",
+        "result": {
+          "name": "SUCCESSFUL",
+          "type": "pipeline_state_completed_successful"
+        }
+      },
+      "build_number": 10,
+      "creator": {
+        "display_name": "Klaudia Xhika",
+        "links": {
+          "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7Ba7ee0570-52b2-4a57-a092-386ba7065e71%7D"
+          },
+          "avatar": {
+            "href": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5de4d4af05eece0d0920b24a/bad8bcc7-df3d-4440-8bb7-64d4e55b7027/128"
+          },
+          "html": {
+            "href": "https://bitbucket.org/%7Ba7ee0570-52b2-4a57-a092-386ba7065e71%7D/"
+          }
+        },
+        "type": "user",
+        "uuid": "{a7ee0570-52b2-4a57-a092-386ba7065e71}",
+        "account_id": "5de4d4af05eece0d0920b24a",
+        "nickname": "Klaudia Xhika"
+      },
+      "created_on": "2020-10-08T07:52:57.09Z",
+      "completed_on": "2020-10-08T07:55:24.806Z",
+      "target": {
+        "ref_type": "branch",
+        "ref_name": "feature/DET-395",
+        "selector": {
+          "type": "default"
+        },
+        "commit": {
+          "hash": "12300ebddea36d73ca0dc3c7faaa04cfec194c2f",
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/novigo-consulting/deterchimica-be/commit/12300ebddea36d73ca0dc3c7faaa04cfec194c2f"
+            },
+            "html": {
+              "href": "https://bitbucket.org/novigo-consulting/deterchimica-be/commits/12300ebddea36d73ca0dc3c7faaa04cfec194c2f"
+            }
+          },
+          "type": "commit"
+        },
+        "type": "pipeline_ref_target"
+      },
+      "trigger": {
+        "name": "PUSH",
+        "type": "pipeline_trigger_push"
+      },
+      "run_number": 1,
+    "duration_in_seconds": 140,
+      "build_seconds_used": 139,
+      "first_successful": false,
+      "expired": true,
+      "links": {
+        "self": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bedf74168-9430-471f-90bf-ef7c3ee0b19b%7D"
+        },
+        "steps": {
+          "href": "http://bitbucket-pipelines.prod.public.atl-paas.net/rest/1.0/accounts/%7B87f6eb29-a481-4249-ba78-55659de615d7%7D/repositories/%7B7db39695-a34d-4b95-9f3d-45ffe55db64b%7D/pi
+pelines/%7Bedf74168-9430-471f-90bf-ef7c3ee0b19b%7D/steps"
+        }
+      },
+      "has_variables": false,
+      "labels": {},
+      "type": "pipeline"
+    }
+  ],
+  "size": 1201,
+  "pagelen": 10
+}

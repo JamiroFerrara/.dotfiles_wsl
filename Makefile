@@ -64,6 +64,26 @@ install:
 	make mysql
 	make gitflow
 	make inotify-tools
+	make jqp
+	make atuin
+
+tpm:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+atuin:
+	curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+
+wsl-vpnkit:
+	sudo apt update
+	sudo apt upgrade
+	sudo apt-get install iproute2 iptables iputils-ping dnsutils
+	sudo mkdir /usr/local/wsl-vpnkit
+	cd /usr/local/wsl-vpnkit && sudo wget https://github.com/sakai135/wsl-vpnkit/releases/download/v0.4.1/wsl-vpnkit.tar.gz
+	cd /usr/local/wsl-vpnkit && sudo tar --strip-components=1 -xf wsl-vpnkit.tar.gz \
+	app/wsl-vpnkit \
+	app/wsl-gvproxy.exe \
+	app/wsl-vm \
+	app/wsl-vpnkit.service
 
 mysql:
 	sudo apt update
@@ -141,7 +161,7 @@ fd:
 
 neovim:
 	make wget
-	wget https://github.com/neovim/neovim/releases/download/v0.8.2/nvim-linux64.tar.gz
+	wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz
 	mkdir -p temp
 	mv nvim-linux64.tar.gz temp
 	cd temp && tar -xzf nvim-linux64.tar.gz

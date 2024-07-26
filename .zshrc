@@ -29,3 +29,10 @@ if [ "$TMUX" = "" ]; then tn; fi
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# Atuin
+export ATUIN_NOBIND="true"
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
+bindkey '^[r' atuin-search
