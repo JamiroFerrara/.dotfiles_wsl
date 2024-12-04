@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-source ~/.scripts/bitbucket.sh
-
 # [[ Run ]]
 # If one argument is passed, run the script with that name
 # If no arguments are passed, use fzf to search the scripts folder

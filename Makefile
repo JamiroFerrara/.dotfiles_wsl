@@ -28,6 +28,7 @@ install:
 	sudo apt remove nano
 	# make libssl
 	make unzip
+	make fly
 	make wget
 	make gum
 	make tmux
@@ -96,8 +97,24 @@ mysql:
 
 dotnet:
 	rm -dfr ${HOME}/.dotnet
+	make dotnet8
 	make dotnet7
 	make dotnet21
+
+dotnet8_runtime:
+	sudo apt-get install -y dotnet-sdk-8.0
+
+dotnet8:
+	make wget
+	make rsync
+	wget https://download.visualstudio.microsoft.com/download/pr/db901b0a-3144-4d07-b8ab-6e7a43e7a791/4d9d1b39b879ad969c6c0ceb6d052381/dotnet-sdk-8.0.401-linux-x64.tar.gz
+	mkdir -p temp
+	mv dotnet-sdk-8.0.401-linux-x64.tar.gz temp
+	cd temp && tar -xzf dotnet-sdk-8.0.401-linux-x64.tar.gz
+	rm -dfr temp/dotnet-sdk-8.0.401-linux-x64.tar.gz
+	mkdir -p ${HOME}/.dotnet
+	rsync -a temp/ ${HOME}/.dotnet
+	rm -dfr temp
 
 dotnet7:
 	make wget
@@ -349,3 +366,6 @@ inotify-tools:
 
 tokei:
 	cargo install tokei
+
+fly:
+	curl -L https://fly.io/install.sh | sh

@@ -26,7 +26,10 @@ alias tm="tmux"
 alias M="make"
 alias ml="make local"
 alias mb="make build"
-alias mp="make push"
+alias mp="make publish"
+alias Mp="make pull"
+alias MP="make push"
+alias ms="make start"
 
 alias ports='netstat -tulanp'
 

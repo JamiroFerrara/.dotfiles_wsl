@@ -12,8 +12,24 @@
     "name": "TBSICUREZZA"
   },
   {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.169:1433/PandA?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "Panda"
+  },
+  {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@FCVWSQT1:1433/TBBASE_CCB4?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=true&trustServerCertificate=true",
+    "name": "TBBASE_CCB4"
+  },
+  {
+    "url": "sqlserver://sa:!PassworD@localhost:1433/TBSICUREZZA?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
+    "name": "PMS_DOCKER"
+  },
+  {
     "url": "sqlserver://Novigo:Novig0%25@10.0.0.125:1433/AHR_NOVIGO?encrypt=false&persistSecurityInfo=true&trustServerCertificate=true",
     "name": "ADHOC"
+  },
+  {
+    "url": "sqlserver://Novigo:Novig0%25@10.0.0.125:1433/AHR_NOVIGO_P?encrypt=false&persistSecurityInfo=true&trustServerCertificate=true",
+    "name": "ADHOC_PROD"
   },
   {
   "url": "sqlserver://sa:g%40elian7481821@localhost:1433/AHR_NOVIGO?encrypt=false&persistSecurityInfo=true&trustServerCertificate=true",

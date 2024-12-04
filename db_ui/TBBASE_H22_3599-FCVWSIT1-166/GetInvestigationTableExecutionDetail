@@ -1,0 +1,70 @@
+  Select distinct
+
+  CASE WHEN NOT TITOLO_AGGIUNTIVO IS NULL AND TITOLO_AGGIUNTIVO <> '' THEN SB_Titolo + ' - ' + TITOLO_AGGIUNTIVO ELSE SB_Titolo END AS TitoloTabella,
+  ESE.ID_CFG,
+  ESE.TIPO,
+  ESE.DATA_RIFERIMENTO,
+  ESE.DATA_CHIUSURA,
+  ESE.DATA_APPLICAZIONE,
+  ESE.STATO_ESECUZIONE,
+  ESE.TIPO_APPLICAZIONE,
+  ESE.INFO_ATTIVITA,
+  ESE.INFO_DATISTRUTTURA,
+  ESE.INFO_ANNOTAZIONI,
+  ESE.Provvedimento as PROVVEDIMENTO,
+  IsNull(NOM2.DESCRIZIONE, ESE.ENTITA_ASSEGNATA) As A_CARICO_DI,
+  Case When CLN.NomeGerarchico Is Null Then 'Non Classificati' Else CLN.NomeGerarchico End As Classificazione,
+  TET.descrizione AS CompetenzaEsecuzione,
+  ESE.VERSIONE,
+  CASE WHEN ESE.ID_CORRELAZIONI_USA IS NULL THEN 'No' WHEN NOT ESE.ID_CORRELAZIONI_USA IS NULL THEN 'Si' END as [Correlazioni],
+  (
+    CASE WHEN CLN.nomegerarchico IS NULL THEN 'Non Classificati' ELSE CLN.nomegerarchico END
+  ) as CLASSIFICAZIONE,
+  (
+    SELECT
+      descrizione
+    FROM
+      FCVWSCT1.TBConfig.dbo.CON_DECODIFICA
+    WHERE
+      TIPO = 'drStato'
+      AND CODICE = ESE.STATO
+  ) AS DESCRSTATO,
+  WAL.ID,
+  WAL.NOMEFILE,
+  WAL.PATH,
+  WAL.TIPODOC,
+  WAL.NOTA
+
+  from CON_ESECUZIONI_TIN_3599 as ESE
+  inner join CON_CFG_TABINDAGINE_3599 as CON
+  on ESE.ID_CFG = CON.ID_TESTATA and CON.VERSIONE = ESE.VERSIONE
+  inner join CON_CFG_TESTATA_3599 as TES
+  on TES.ID = CON.ID_TESTATA
+  inner Join SIOd_SB_SchedaBase_3599 SIS
+  on TES.SB_GuidOriginale = SIS.SB_GuidOriginale And ESE.SB_Nr_Versione = SIS.SB_Nr_Versione
+  Left Outer Join CON_COMPETENZE_ESECUZIONE_3599 COM
+  On TES.ID = COM.ID_CFG_TESTATA And TES.VERSIONE = COM.VERSIONE
+  Left Outer Join CON_TESTATA_TABELLE_3599 TET
+  On COM.ID_TAB_TESTATA = TET.ID
+
+  LEFT JOIN CON_ALLEGATI_3599 ALG ON ESE.ID_ESECUZIONE = ALG.ID_ENTITA
+  LEFT JOIN WEB_ALLEGATI_3599 WAL ON ALG.ID_ALLEGATO = WAL.ID
+
+  Left Join SIOd_ID_IdentificazioniScheda_3599 SII
+  On SIS.SB_Guid = SII.ID_SB_Guid And SII.ID_TipoClassificazione = 'P'
+  Left Join CLA_NOMIGERARCHICI_3599 CLN
+  On SII.ID_IdNodo = CLN.CodiceNodo
+  Left Join V_RIS_NOMIGERARCHICI_3599 NOM2
+  On ESE.ENTITA_ASSEGNATA = NOM2.codicenodo And ESE.COD_ABI = NOM2.codiceAbi
+  WHERE ESE.ID_ESECUZIONE = '51da5756-32e5-4bd8-a381-628684c0bf2a'
+
+-- ID
+-- COD_ABI
+-- APPLICAZIONE
+-- DESCRIZIONE
+-- PATH
+-- NOMEFILE
+-- TIPODOC
+-- DATA_INSERIMENTO
+-- COD_UTENTE
+-- NOTA                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ID_ENTITA                            TIPO ID_ALLEGATO          
