@@ -20,6 +20,10 @@
     "name": "TBBASE_CCB4"
   },
   {
+    "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.169:1433/PMS?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=true&trustServerCertificate=true",
+    "name": "PMS"
+  },
+  {
     "url": "sqlserver://sa:!PassworD@localhost:1433/TBSICUREZZA?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
     "name": "PMS_DOCKER"
   },

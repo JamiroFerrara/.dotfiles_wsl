@@ -35,7 +35,7 @@ alias ports='netstat -tulanp'
 
 # [Windows]
 alias op="explorer.exe ."
-alias sh="powershell.exe C://Users/j.ferrara/scripts/shutdown.ps1"
+alias shutdown="powershell.exe C://Users/j.ferrara/scripts/shutdown.ps1"
 alias rb="powershell.exe C://Users/j.ferrara/scripts/reboot.ps1"
 
 # [Git]

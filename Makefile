@@ -1,3 +1,5 @@
+FLYCTL_INSTALL := $(shell echo $$HOME)
+
 init:
 	mkdir -p ${HOME}/.config
 	mkdir -p ${HOME}/.local
@@ -136,6 +138,18 @@ dotnet21:
 	mv dotnet-sdk-2.1.818-linux-x64.tar.gz temp
 	cd temp && tar -xzf dotnet-sdk-2.1.818-linux-x64.tar.gz
 	rm -dfr temp/dotnet-sdk-2.1.818-linux-x64.tar.gz
+	mkdir -p ${HOME}/.dotnet
+	rsync -a temp/ ${HOME}/.dotnet
+	rm -dfr temp
+
+dotnet31:
+	make wget
+	make rsync
+	wget https://download.visualstudio.microsoft.com/download/pr/e89c4f00-5cbb-4810-897d-f5300165ee60/027ace0fdcfb834ae0a13469f0b1a4c8/dotnet-sdk-3.1.426-linux-x64.tar.gz
+	mkdir -p temp
+	mv dotnet-sdk-3.1.426-linux-x64.tar.gz temp
+	cd temp && tar -xzf dotnet-sdk-3.1.426-linux-x64.tar.gz
+	rm -dfr temp/dotnet-sdk-3.1.426-linux-x64.tar.gz
 	mkdir -p ${HOME}/.dotnet
 	rsync -a temp/ ${HOME}/.dotnet
 	rm -dfr temp
