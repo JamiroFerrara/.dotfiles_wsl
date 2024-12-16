@@ -383,3 +383,6 @@ tokei:
 
 fly:
 	curl -L https://fly.io/install.sh | sh
+
+psql:
+	sudo apt install postgresql-client -y

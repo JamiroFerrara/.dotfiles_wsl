@@ -24,6 +24,14 @@
     "name": "PMS"
   },
   {
+    "url": "postgres://citizix_user:S3cret@localhost:5432/citizix_db",
+    "name": "PSQL"
+  },
+  {
+    "url": "postgres://postgres:fjUFC1A33BsKZmR@localhost:5432/db",
+    "name": "PSQL_FLY"
+  },
+  {
     "url": "sqlserver://sa:!PassworD@localhost:1433/TBSICUREZZA?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
     "name": "PMS_DOCKER"
   },
