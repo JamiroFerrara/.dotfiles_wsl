@@ -86,3 +86,18 @@ function ranger-cd {
     fi  
     rm -f -- "$tempfile"
 }
+
+alias flyl='fly-list'
+function fly-list {
+    list='
+fly machines list
+fly apps list
+fly status
+fly version
+fly help
+    '
+    selected=$(echo "$list" | fzf)
+    if [ -n "$selected" ]; then
+        eval "$selected"
+    fi
+}
