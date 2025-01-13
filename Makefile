@@ -386,3 +386,12 @@ fly:
 
 psql:
 	sudo apt install postgresql-client -y
+
+sqlc:
+	make wget
+	wget https://github.com/sqlc-dev/sqlc/releases/download/v1.27.0/sqlc_1.27.0_linux_amd64.tar.gz
+	mkdir -p temp
+	mv sqlc_1.27.0_linux_amd64.tar.gz temp
+	cd temp && tar -xzf sqlc_1.27.0_linux_amd64.tar.gz
+	sudo cp temp/sqlc /usr/local/bin/
+	rm -dfr temp
