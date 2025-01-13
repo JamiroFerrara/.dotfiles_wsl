@@ -21,6 +21,8 @@ alias bat="batcat"
 alias cat="bat -P"
 alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 alias tm="tmux"
+alias lf="nvim -c 'Oil'"
+alias dc="docker compose"
 
 # [Make]
 alias M="make"
