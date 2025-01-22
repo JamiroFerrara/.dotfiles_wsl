@@ -23,6 +23,7 @@ alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:50
 alias tm="tmux"
 alias lf="nvim -c 'Oil'"
 alias dc="docker compose"
+alias red="remove-empty-directories"
 
 # [Make]
 alias M="make"
@@ -37,7 +38,7 @@ alias ports='netstat -tulanp'
 
 # [Windows]
 alias op="explorer.exe ."
-alias shutdown="powershell.exe C://Users/j.ferrara/scripts/shutdown.ps1"
+alias shutdown="powershell.exe Stop-Computer -force"
 alias rb="powershell.exe C://Users/j.ferrara/scripts/reboot.ps1"
 
 # [Git]
@@ -47,7 +48,9 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gitlines="git diff --stat HEAD~1..HEAD"
 
 # [Nvim]
+alias v="nvim"
 alias vi="tmux neww nvim -c 'lua require(\"harpoon.ui\").nav_file(1)'; exit"
+alias vt="nvim TODO.md"
 alias vim="nvim -c 'Telescope find_files nvim -c 'lua require(\"harpoon.ui\").nav_file(1)'; exit'"
 alias va="nvim /home/jferrara/vault/"
 

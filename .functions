@@ -101,3 +101,7 @@ fly help
         eval "$selected"
     fi
 }
+
+function remove-empty-directories {
+    find . -type d -empty -exec rmdir -v {} +
+}
