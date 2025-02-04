@@ -36,3 +36,4 @@ export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 
 bindkey '^[r' atuin-search
+# bindkey -r '^I'

@@ -24,6 +24,7 @@ alias tm="tmux"
 alias lf="nvim -c 'Oil'"
 alias dc="docker compose"
 alias red="remove-empty-directories"
+alias kill="sudo kill -9"
 
 # [Make]
 alias M="make"

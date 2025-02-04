@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-tmux neww bash -c "/home/jferrara/.scripts/cgpt.sh"
+tmux neww bash -c "${HOME}/.scripts/cgpt.sh"

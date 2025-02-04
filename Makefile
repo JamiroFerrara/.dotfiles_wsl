@@ -69,6 +69,7 @@ install:
 	make inotify-tools
 	make jqp
 	make atuin
+	make cloc
 
 tpm:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -386,6 +387,9 @@ fly:
 
 psql:
 	sudo apt install postgresql-client -y
+
+cloc:
+	sudo apt install cloc
 
 sqlc:
 	make wget

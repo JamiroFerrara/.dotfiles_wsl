@@ -4,6 +4,10 @@
     "name": "Allitude-TBCONFIG-168"
   },
   {
+    "url": "sqlserver://sa:!PassworD@localhost:1433/TBBASE_H22_3599?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
+    "name": "TBBASE_H22_3599_DOCKER"
+  },
+  {
     "url": "sqlserver://fcAlimTest:AlliT_at1@10.130.1.166:1433/TBBASE_H22_3599?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
     "name": "TBBASE_H22_3599-FCVWSIT1-166"
   },
@@ -24,7 +28,7 @@
     "name": "PMS"
   },
   {
-    "url": "sqlserver://sa:!PassworD@localhost:1433/TBSICUREZZA?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
+    "url": "sqlserver://sa:!PassworD@localhost:1433/PMS?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
     "name": "PMS_DOCKER"
   },
   {

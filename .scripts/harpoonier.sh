@@ -3,7 +3,7 @@ number=$1
 
 vault="~/vault"
 db="~"
-favourites=$(cat /home/jferrara/.scripts/harpoonier.list)
+favourites=$(cat "${HOME}/.scripts/harpoonier.list")
 
 # Assuming your harpoonier.list has one path per line, you can use awk to select the path
 selected_path=$(echo "$favourites" | awk "NR==$number")
