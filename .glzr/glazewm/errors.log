@@ -1,0 +1,30 @@
+[2m2024-10-28T16:11:35.788109Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-10-30T14:03:58.140194Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '1' doesn't exist or is already active.
+[2m2024-10-30T14:04:23.571391Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '1' doesn't exist or is already active.
+[2m2024-10-30T14:06:21.046024Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '1' doesn't exist or is already active.
+[2m2024-10-30T15:23:53.121117Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '1' doesn't exist or is already active.
+[2m2024-10-30T15:23:54.569058Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '1' doesn't exist or is already active.
+[2m2024-10-30T15:24:27.127555Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '2' doesn't exist or is already active.
+[2m2024-10-30T15:25:25.107163Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:25:37.889650Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:25:52.965212Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:26:03.545512Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:26:36.368716Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:26:38.935826Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:26:42.518945Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:26:45.912995Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-30T15:26:51.175232Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '6' doesn't exist or is already active.
+[2m2024-10-31T08:20:23.328245Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_effects.other_windows.corner_style.style: unknown variant `round`, expected one of `default`, `square`, `rounded`, `small_rounded` at line 74 column 14
+[2m2024-10-31T08:20:29.391583Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_effects.other_windows.corner_style.style: unknown variant `round`, expected one of `default`, `square`, `rounded`, `small_rounded` at line 74 column 14
+[2m2024-11-15T13:14:56.651608Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-11-15T13:18:51.184626Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-11-19T14:16:10.779823Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m No common ancestor between containers.
+[2m2024-12-24T10:17:34.380025Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-12-24T10:24:40.821496Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[13].commands: unrecognized subcommand
+ at line 196 column 15
+[2m2024-12-24T10:24:45.565227Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[13].commands: unrecognized subcommand
+ at line 196 column 15
+[2m2024-12-24T10:26:16.292409Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '' doesn't exist or is already active.
+[2m2024-12-24T10:26:50.696168Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '2' doesn't exist or is already active.
+[2m2024-12-24T10:26:51.628991Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Workspace with name '2' doesn't exist or is already active.
+[2m2025-01-20T08:05:07.622315Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Handle non valido. (0x80070006)
