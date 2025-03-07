@@ -399,3 +399,65 @@ sqlc:
 	cd temp && tar -xzf sqlc_1.27.0_linux_amd64.tar.gz
 	sudo cp temp/sqlc /usr/local/bin/
 	rm -dfr temp
+
+posting:
+	curl -LsSf https://astral.sh/uv/install.sh | sh
+	uv tool install --python 3.12 posting
+
+atac:
+	make wget
+	wget https://github.com/Julien-cpsn/ATAC/releases/download/v0.18.1/atac-v0.18.1-x86_64-unknown-linux-gnu.tar.gz
+	mkdir -p temp
+	mv atac-v0.18.1-x86_64-unknown-linux-gnu.tar.gz temp
+	cd temp && tar -xzf atac-v0.18.1-x86_64-unknown-linux-gnu.tar.gz
+	sudo cp temp/atac /usr/local/bin/
+	rm -dfr temp
+
+odin:
+	make wget
+	wget https://github.com/odin-lang/Odin/releases/download/dev-2025-02/odin-linux-amd64-dev-2025-02.zip
+	mkdir -p temp
+	mv odin-linux-amd64-dev-2025-02.zip temp
+	cd temp && unzip odin-linux-amd64-dev-2025-02.zip
+	mv temp/odin-linux-amd64-dev-2025-02 temp/odin
+	sudo cp -r temp/odin /usr/local/lib/
+	ln -vsf /usr/local/lib/odin/odin /usr/local/bin/
+	sudo apt install llvm clang
+	rm -dfr temp
+
+java:
+	sudo apt install default-jdk
+
+java-spring:
+	curl -s "https://get.sdkman.io" | bash
+	source "$HOME/.sdkman/bin/sdkman-init.sh"
+	sdk install springboot
+
+# broken
+java-oracle-sqlplus:
+	make wget
+	wget https://download.oracle.com/otn_software/linux/instantclient/2370000/oracle-instantclient-basic-23.7.0.25.01-1.el9.x86_64.rpm
+	wget https://download.oracle.com/otn_software/linux/instantclient/2370000/oracle-instantclient-sqlplus-23.7.0.25.01-1.el9.x86_64.rpm
+	wget https://download.oracle.com/otn_software/linux/instantclient/2370000/oracle-instantclient-devel-23.7.0.25.01-1.el9.x86_64.rpm
+	mkdir -p temp
+	mv oracle-instantclient-basic-23.7.0.25.01-1.el9.x86_64.rpm temp
+	mv oracle-instantclient-sqlplus-23.7.0.25.01-1.el9.x86_64.rpm temp
+	mv oracle-instantclient-devel-23.7.0.25.01-1.el9.x86_64.rpm temp
+	sudo apt-get install alien
+	cd temp && sudo alien -i oracle-instantclient-basic-23.7.0.25.01-1.el9.x86_64.rpm
+	cd temp && sudo alien -i oracle-instantclient-sqlplus-23.7.0.25.01-1.el9.x86_64.rpm
+	cd temp && sudo alien -i oracle-instantclient-devel-23.7.0.25.01-1.el9.x86_64.rpm
+	sudo touch /etc/ld.so.conf.d/oracle.conf
+	sudo sh -c 'echo "/usr/lib/oracle/23/client64/lib/" > /etc/ld.so.conf.d/oracle.conf'
+	sudo ldconfig
+	rm -dfr temp
+
+java-maven:
+	make wget
+	wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+	mkdir -p temp
+	mv apache-maven-3.9.9-bin.tar.gz temp
+	cd temp && tar -xzf apache-maven-3.9.9-bin.tar.gz
+	sudo cp -r temp/apache-maven-3.9.9 /usr/local/lib/
+	ln -vsf /usr/local/lib/apache-maven-3.9.9/bin/mvn /usr/local/bin/
+	rm -dfr temp

@@ -1,0 +1,14 @@
+#!/bin/bash
+# Function to display a table from JSON input
+table() {
+    # Check if any arguments are provided
+    if [[ $# -gt 0 ]]; then
+        # If provided, construct the command with select
+        nu -c "input | from json | select $* | table"
+    else
+        # If not provided, construct the command without select
+        nu -c "input | from json | table"
+    fi
+}
+# Call the function with all script arguments
+table "$@"
