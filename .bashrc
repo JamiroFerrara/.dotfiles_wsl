@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+PATH="$PATH:/usr/lib/jvm/jdk-18/bin"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

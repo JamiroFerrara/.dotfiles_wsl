@@ -2,6 +2,7 @@ FLYCTL_INSTALL := $(shell echo $$HOME)
 
 init:
 	mkdir -p ${HOME}/.config
+	mkdir -p ${HOME}/.config/lazygit
 	mkdir -p ${HOME}/.local
 	mkdir -p ${HOME}/.local/share
 	sudo ln -vsf ${PWD}/.alias ${HOME}/.alias
@@ -23,6 +24,7 @@ init:
 	sudo ln -vsf ${PWD}/bin/proxychains /usr/local/bin/
 	sudo ln -vsf ${PWD}/win_bin/xh.exe /usr/local/bin/
 	sudo ln -vsf ${PWD}/win_bin/lftp/ /usr/local/
+	sudo ln -vsf ${PWD}/lazygit/config.yml ${HOME}/.config/lazygit/config.yml
 
 install:
 	sudo apt update
@@ -428,6 +430,44 @@ odin:
 java:
 	sudo apt install default-jdk
 
+java-jdk-18:
+	make wget
+	sudo apt install libc6-x32
+	wget https://download.oracle.com/java/18/archive/jdk-18.0.2.1_linux-x64_bin.deb
+	mkdir -p temp
+	mv jdk-18.0.2.1_linux-x64_bin.deb temp
+	cd temp && sudo dpkg -i jdk-18.0.2.1_linux-x64_bin.deb
+	sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk-18/bin/jar 1712
+	sudo update-alternatives --install /usr/bin/jarsigner jarsigner /usr/lib/jvm/jdk-18/bin/jarsigner 1712
+	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-18/bin/java 1712
+	sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-18/bin/javac 1712
+	sudo update-alternatives --install /usr/bin/javadoc javadoc /usr/lib/jvm/jdk-18/bin/javadoc 1712
+	sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk-18/bin/javap 1712
+	sudo update-alternatives --install /usr/bin/jcmd jcmd /usr/lib/jvm/jdk-18/bin/jcmd 1712
+	sudo update-alternatives --install /usr/bin/jconsole jconsole /usr/lib/jvm/jdk-18/bin/jconsole 1712
+	sudo update-alternatives --install /usr/bin/jdb jdb /usr/lib/jvm/jdk-18/bin/jdb 1712
+	sudo update-alternatives --install /usr/bin/jdeprscan jdeprscan /usr/lib/jvm/jdk-18/bin/jdeprscan 1712
+	sudo update-alternatives --install /usr/bin/jdeps jdeps /usr/lib/jvm/jdk-18/bin/jdeps 1712
+	sudo update-alternatives --install /usr/bin/jfr jfr /usr/lib/jvm/jdk-18/bin/jfr 1712
+	sudo update-alternatives --install /usr/bin/jhsdb jhsdb /usr/lib/jvm/jdk-18/bin/jhsdb 1712
+	sudo update-alternatives --install /usr/bin/jimage jimage /usr/lib/jvm/jdk-18/bin/jimage 1712
+	sudo update-alternatives --install /usr/bin/jinfo jinfo /usr/lib/jvm/jdk-18/bin/jinfo 1712
+	sudo update-alternatives --install /usr/bin/jlink jlink /usr/lib/jvm/jdk-18/bin/jlink 1712
+	sudo update-alternatives --install /usr/bin/jmap jmap /usr/lib/jvm/jdk-18/bin/jmap 1712
+	sudo update-alternatives --install /usr/bin/jmod jmod /usr/lib/jvm/jdk-18/bin/jmod 1712
+	sudo update-alternatives --install /usr/bin/jpackage jpackage /usr/lib/jvm/jdk-18/bin/jpackage 1712
+	sudo update-alternatives --install /usr/bin/jps jps /usr/lib/jvm/jdk-18/bin/jps 1712
+	sudo update-alternatives --install /usr/bin/jrunscript jrunscript /usr/lib/jvm/jdk-18/bin/jrunscript 1712
+	sudo update-alternatives --install /usr/bin/jshell jshell /usr/lib/jvm/jdk-18/bin/jshell 1712
+	sudo update-alternatives --install /usr/bin/jstack jstack /usr/lib/jvm/jdk-18/bin/jstack 1712
+	sudo update-alternatives --install /usr/bin/jstat jstat /usr/lib/jvm/jdk-18/bin/jstat 1712
+	sudo update-alternatives --install /usr/bin/jstatd jstatd /usr/lib/jvm/jdk-18/bin/jstatd 1712
+	sudo update-alternatives --install /usr/bin/jwebserver jwebserver /usr/lib/jvm/jdk-18/bin/jwebserver 1712
+	sudo update-alternatives --install /usr/bin/keytool keytool /usr/lib/jvm/jdk-18/bin/keytool 1712
+	sudo update-alternatives --install /usr/bin/rmiregistry rmiregistry /usr/lib/jvm/jdk-18/bin/rmiregistry 1712
+	sudo update-alternatives --install /usr/bin/serialver serialver /usr/lib/jvm/jdk-18/bin/serialver 1712
+	rm -dfr temp
+
 java-spring:
 	curl -s "https://get.sdkman.io" | bash
 	source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -461,3 +501,15 @@ java-maven:
 	sudo cp -r temp/apache-maven-3.9.9 /usr/local/lib/
 	ln -vsf /usr/local/lib/apache-maven-3.9.9/bin/mvn /usr/local/bin/
 	rm -dfr temp
+
+bunster:
+	curl -f https://bunster.netlify.app/install.sh | bash
+
+zenity:
+	sudo apt-get install zenity
+
+himalaya:
+	cargo install himalaya
+
+sqlpackage:
+	dotnet tool install -g microsoft.sqlpackage --version 8.0.6

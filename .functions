@@ -105,3 +105,24 @@ fly help
 function remove-empty-directories {
     find . -type d -empty -exec rmdir -v {} +
 }
+
+function upload_file() {
+    local file_path="$1"
+    local api_url="http://localhost:3001/upload"  # Replace PORT with your actual port number
+    # Check if the file exists
+    if [[ ! -f "$file_path" ]]; then
+        echo "File not found: $file_path"
+        return 1
+    fi
+    # Upload the file using curl
+    local response
+    response=$(curl -s -X POST "$api_url" -F "files=@$file_path")
+    # Check if the upload was successful
+    if [[ $? -eq 0 ]]; then
+        echo "Upload successful!"
+        echo "Response: $response"
+    else
+        echo "Upload failed."
+        return 1
+    fi
+}

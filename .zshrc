@@ -17,6 +17,11 @@ setopt appendhistory
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 bindkey '^J' autosuggest-execute
 
+# probably change these 
+bindkey '=' backward-word 
+bindkey '@' forward-word
+bindkey '^H' backward-kill-word
+
 # [Load once a day to speed up zsh]
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
