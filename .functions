@@ -126,3 +126,63 @@ function upload_file() {
         return 1
     fi
 }
+
+function send() {
+    # Check if fzf and curl are installed
+    if ! command -v fzf &> /dev/null; then
+        echo "fzf could not be found. Please install it."
+        return 1
+    fi
+    if ! command -v curl &> /dev/null; then
+        echo "curl could not be found. Please install it."
+        return 1
+    fi
+    # Use fzf to select a file in the current directory and its subdirectories
+    FILE=$(find . -type f | fzf --height 40% --reverse --preview 'cat {}' --preview-window=up:30%)
+    
+    # Check if a file was selected
+    if [ -z "$FILE" ]; then
+        echo "No file selected."
+        return 1
+    fi
+    # Upload the file to 0x0.st with a custom User-Agent
+    RESPONSE=$(curl -F "file=@$FILE" -H "User-Agent: stiwie/9999" https://0x0.st)
+    
+    # Check if the upload was successful
+    if [[ $? -eq 0 ]]; then
+        echo "File uploaded successfully!"
+        echo "$RESPONSE"
+        
+        # Copy the response (upload link) to the clipboard using PowerShell
+        echo "$RESPONSE" | clip.exe
+        
+        echo "Upload link copied to clipboard."
+    else
+        echo "Failed to upload the file."
+        return 1
+    fi
+}
+
+alias n='nvim'
+alias vim='nvim'
+alias vi='nvim'
+
+nvim() {
+  if [ -n "$TMUX" ] && [ -z "$NVIM" ]; then
+    local orig_cmd
+    orig_cmd=$(tmux show-option -gqv default-command)
+
+    # Temporarily unset default-command
+    tmux set-option -g default-command ""
+
+    # Respawn current pane running nvim
+    tmux respawn-pane -k "nvim \"$@\""
+
+    # Immediately restore default-command (tmux commands are synchronous)
+    if [ -n "$orig_cmd" ]; then
+      tmux set-option -g default-command "$orig_cmd"
+    fi
+  else
+    command nvim "$@"
+  fi
+}

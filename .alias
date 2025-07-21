@@ -7,8 +7,10 @@ alias hosts="batcat /mnt/c/Windows/System32/drivers/etc/hosts"
 
 # [Basics]
 alias ls="exa -la --icons"
+alias la="exa"
 alias l="exa -l --icons"
 alias lt="exa -l --tree --level=2 --long --icons -a"
+alias tree="exa --tree"
 alias cl="clear"
 alias rm="rm -dfr"
 alias h="history | fzy"
@@ -54,5 +56,11 @@ alias vi="tmux neww nvim -c 'lua require(\"harpoon.ui\").nav_file(1)'; exit"
 alias vt="nvim TODO.md"
 alias vim="nvim -c 'Telescope find_files nvim -c 'lua require(\"harpoon.ui\").nav_file(1)'; exit'"
 alias va="nvim /home/jferrara/vault/"
+
+# [Jira]
+alias jic="jira issue comment add"
+alias jiv="jira issue view --plain --comments 10"
+alias jim="jira issue move"
+function jin() { jira issue edit "$1" --custom note="$2" }
 
 source /home/jferrara/.scripts/t.sh

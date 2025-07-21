@@ -48,12 +48,16 @@
     "name": "ADHOC_PROD"
   },
   {
-  "url": "sqlserver://sa:g%40elian7481821@localhost:1433/AHR_NOVIGO_P?encrypt=false&persistSecurityInfo=true&trustServerCertificate=true",
+  "url": "sqlserver://sa:g%40elian7481821@localhost:1433/AHR_NOVIGO?encrypt=false&persistSecurityInfo=true&trustServerCertificate=true",
     "name": "LOCAL_ADHOC"
   },
   {
     "url": "mysql://novigo:secret@localhost:3306/novigo",
     "name": "DETERCHIMICA"
+  },
+  {
+    "url": "sqlserver://sa:NS4%40rna%21@localhost:1433/novigo?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
+    "name": "RNA"
   },
   {
     "url": "oracle://jamiro:password@localhost:1521/ORCLPDB1",

@@ -240,11 +240,11 @@ starship:
 
 jira:
 	make wget
-	wget https://github.com/ankitpokhrel/jira-cli/releases/download/v1.4.0/jira_1.4.0_linux_x86_64.tar.gz
+	wget https://github.com/ankitpokhrel/jira-cli/releases/download/v1.6.0/jira_1.6.0_linux_x86_64.tar.gz
 	mkdir -p temp
-	mv jira_1.4.0_linux_x86_64.tar.gz temp
-	cd temp && tar -xzf jira_1.4.0_linux_x86_64.tar.gz
-	sudo cp temp/jira_1.4.0_linux_x86_64/bin/jira /usr/local/bin/
+	mv jira_1.6.0_linux_x86_64.tar.gz temp
+	cd temp && tar -xzf jira_1.6.0_linux_x86_64.tar.gz
+	sudo cp temp/jira_1.6.0_linux_x86_64/bin/jira /usr/local/bin/
 	rm -dfr temp
 
 nushell:
@@ -512,4 +512,37 @@ himalaya:
 	cargo install himalaya
 
 sqlpackage:
-	dotnet tool install -g microsoft.sqlpackage --version 8.0.6
+	dotnet tool install -g microsoft.sqlpackage --version 162.3.563
+
+keychain:
+	sudo apt install keychain
+
+ffmpeg:
+	sudo apt-get install ffmpeg
+
+audiowaveform:
+	sudo apt update
+	sudo apt install software-properties-common python3-launchpadlib
+	sudo add-apt-repository ppa:chris-needham/ppa
+	sudo apt-get update
+	sudo apt-get install audiowaveform
+
+7z:
+	sudo apt install p7zip-full
+
+rundeck:
+	make wget
+	make rsync
+	wget https://github.com/rundeck/rundeck-cli/releases/download/v2.0.9/rd-2.0.9.zip
+	mkdir -p temp
+	mv rd-2.0.9.zip temp
+	cd temp && unzip rd-2.0.9.zip
+	mv temp/rd-2.0.9/bin/rd /usr/local/bin/
+	rsync -a temp/rd-2.0.9/lib/ /usr/local/lib
+	rm -dfr temp
+
+opencode:
+	curl -fsSL https://raw.githubusercontent.com/opencode-ai/opencode/refs/heads/main/install | bash
+
+nvr:
+	pip3 install -U neovim-remote

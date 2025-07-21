@@ -17,10 +17,7 @@ setopt appendhistory
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 bindkey '^J' autosuggest-execute
 
-# probably change these 
-bindkey '=' backward-word 
-bindkey '@' forward-word
-bindkey '^H' backward-kill-word
+precmd() { print -rP "%~" }
 
 # [Load once a day to speed up zsh]
 autoload -Uz compinit
@@ -40,7 +37,8 @@ export ATUIN_NOBIND="true"
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
-bindkey '^[r' atuin-search
+# bindkey '^[r' atuin-search
+bindkey '^R' atuin-search
 # bindkey -r '^I'
 # bindkey -r '^M'
 
