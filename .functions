@@ -168,7 +168,6 @@ alias vim='nvim'
 alias vi='nvim'
 
 nvim() {
-  if [ -n "$TMUX" ] && [ -z "$NVIM" ]; then
     local orig_cmd
     orig_cmd=$(tmux show-option -gqv default-command)
 
@@ -182,7 +181,4 @@ nvim() {
     if [ -n "$orig_cmd" ]; then
       tmux set-option -g default-command "$orig_cmd"
     fi
-  else
-    command nvim "$@"
-  fi
 }
