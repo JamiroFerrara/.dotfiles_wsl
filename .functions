@@ -174,11 +174,14 @@ nvim() {
     # Temporarily unset default-command
     tmux set-option -g default-command ""
 
-    # Respawn current pane running nvim
-    tmux respawn-pane -k "nvim \"$@\""
+    # Get current working directory
+    local cwd="$PWD"
+
+    # Respawn current pane running nvim in current directory
+    tmux respawn-pane -k -c "$cwd" "nvim \"$@\""
 
     # Immediately restore default-command (tmux commands are synchronous)
     if [ -n "$orig_cmd" ]; then
-      tmux set-option -g default-command "$orig_cmd"
+        tmux set-option -g default-command "$orig_cmd"
     fi
 }
