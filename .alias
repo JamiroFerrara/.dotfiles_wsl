@@ -44,6 +44,8 @@ alias op="explorer.exe ."
 alias shutdown="powershell.exe Stop-Computer -force"
 alias rb="powershell.exe C://Users/j.ferrara/scripts/reboot.ps1"
 
+alias pirate="/home/jferrara/.scripts/piratebay.sh"
+
 # [Git]
 alias lg="lazygit"
 alias status="tmux neww git log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit"
