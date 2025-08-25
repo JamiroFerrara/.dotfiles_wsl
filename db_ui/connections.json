@@ -53,7 +53,15 @@
   },
   {
     "url": "mysql://novigo:secret@localhost:3306/novigo",
-    "name": "DETERCHIMICA"
+    "name": "DETERCHIMICA_LOCALE"
+  },
+  {
+    "url": "mysql://j.ferrara:%2F0l%3FWIDgV%2FZs46Z3@rds-ec1-p-madb01.cdlucylwsaxh.eu-central-1.rds.amazonaws.com/p-deterchimica",
+    "name": "DETERCHIMICA_PROD"
+  },
+  {
+    "url": "mysql://j.ferrara:%2F0l%3FWIDgV%2FZs46Z3@rds-ec1-s-madb01.cdlucylwsaxh.eu-central-1.rds.amazonaws.com/s-deterchimica",
+    "name": "DETERCHIMICA_STAGING"
   },
   {
     "url": "sqlserver://sa:NS4%40rna%21@localhost:1433/novigo?encrypt=false&integratedSecurity=SSPI&persistSecurityInfo=True&trustServerCertificate=True",
