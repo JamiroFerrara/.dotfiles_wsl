@@ -18,8 +18,19 @@ fi
 # [Plugins]
 eval "$(zoxide init zsh)" #NOTE: 2ms
 source ~/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh #NOTE: 2/3 ms
+bindkey '^j' autosuggest-execute
 
-zle -N h # Register ‘h’ as a widget
+zle -N h
+bindkey '^R' h # map Ctrl+R
 h() {
-  eval $(([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzy -l 200 | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  eval $(
+    (
+      ([ -n "$ZSH_NAME" ] && fc -l 1 || history) \
+      | sed -E 's/ *[0-9]*\*? *//' \
+      | sed -E 's/\\/\\\\/g' \
+      | tac | awk '!seen[$0]++' | tac \
+      | fzy -l 200
+    )
+  )
 }
+

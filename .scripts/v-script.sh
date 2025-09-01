@@ -8,6 +8,10 @@ else
     ZOXIDE_RESULT=$(zoxide query -l -s | fzf-tmux --exact --no-sort -p --reverse | awk '{print $2}')
 fi
 
+if [ -n "$ZOXIDE_RESULT" ]; then
+    zoxide add "$ZOXIDE_RESULT" # Add directory to zoxide
+fi
+
 FOLDER=$(basename "$ZOXIDE_RESULT")
 SESSION_NAME=$(echo "$FOLDER" | tr ' ' '_' | tr '.' '_')
 

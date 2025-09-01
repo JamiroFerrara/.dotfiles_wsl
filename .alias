@@ -67,3 +67,5 @@ alias jim="jira issue move"
 function jin() { jira issue edit "$1" --custom note="$2" }
 
 source /home/jferrara/.scripts/t.sh
+
+bindkey '^[[3;3~' kill-word
