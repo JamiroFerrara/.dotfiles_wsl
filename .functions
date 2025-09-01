@@ -185,3 +185,11 @@ nvim() {
         tmux set-option -g default-command "$orig_cmd"
     fi
 }
+
+nu() {
+    /usr/local/bin/nu -c "$*"
+}
+
+cheat() {
+    curl cheat.sh/$1
+}
