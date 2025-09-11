@@ -28,6 +28,10 @@
     "name": "PMS"
   },
   {
+    "url": "sqlserver://fcAlimTest2:AllT_alimT_2@10.130.1.176:1433/PMS?encrypt=true&trustServerCertificate=true",
+    "name": "PMS_T2"
+  },
+  {
     "url": "sqlserver://sa:!PassworD@localhost:1433/PMS?encrypt=true&multipleActiveResultSets=true&trustServerCertificate=true",
     "name": "PMS_DOCKER"
   },

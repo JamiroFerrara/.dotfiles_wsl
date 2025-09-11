@@ -1,14 +1,30 @@
-DECLARE @Seriale NVARCHAR(50); -- Adjust the data type and size as needed
-set @Seriale = 'ab553faa-67d4-11f0-abbf-026a3238d89a';
+DECLARE @Seriale NVARCHAR(50);
 
-select TOP 10 * from DETERORD_MAST
-  where SerialeNovigo = @Seriale
+-- Adjust the data type and size as needed
+SET
+    @Seriale = '7e57f669-8284-11f0-abbf-026a3238d89a';
 
-select TOP 10 * from DETERORD_DETT
-  where SerialeNovigo = @Seriale
-
-select TOP 10 * from OrdiniTestata
-  where Seriale = @Seriale
-
-select TOP 10 * from OrdiniRighe
-  where Seriale = @Seriale
+SELECT
+    TOP 10 *
+FROM
+    DETERORD_MAST
+WHERE
+    SerialeNovigo = @Seriale
+SELECT
+    TOP 10 *
+FROM
+    DETERORD_DETT
+WHERE
+    SerialeNovigo = @Seriale
+SELECT
+    TOP 10 *
+FROM
+    OrdiniTestata
+WHERE
+    Seriale = @Seriale
+SELECT
+    TOP 10 *
+FROM
+    OrdiniRighe
+WHERE
+    Seriale = @Seriale
