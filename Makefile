@@ -121,6 +121,19 @@ dotnet8:
 	rsync -a temp/ ${HOME}/.dotnet
 	rm -dfr temp
 
+dotnet9:
+	make wget
+	make rsync
+	wget https://download.visualstudio.microsoft.com/download/pr/db901b0a-3144-4d07-b8ab-6e7a43e7a791/4d9d1b39b879ad969c6c0ceb6d052381/dotnet-sdk-8.0.401-linux-x64.tar.gz
+	mkdir -p temp
+	mv dotnet-sdk-8.0.401-linux-x64.tar.gz temp
+	cd temp && tar -xzf dotnet-sdk-8.0.401-linux-x64.tar.gz
+	rm -dfr temp/dotnet-sdk-8.0.401-linux-x64.tar.gz
+	mkdir -p ${HOME}/.dotnet
+	rsync -a temp/ ${HOME}/.dotnet
+	rm -dfr temp
+
+
 dotnet7:
 	make wget
 	make rsync
@@ -159,10 +172,10 @@ dotnet31:
 
 go:
 	make wget
-	wget https://go.dev/dl/go1.21.1.linux-amd64.tar.gz
+	wget https://go.dev/dl/go1.24.6.linux-amd64.tar.gz
 	mkdir -p temp
-	mv go1.21.1.linux-amd64.tar.gz temp
-	cd temp && tar -xzf go1.21.1.linux-amd64.tar.gz
+	mv go1.24.6.linux-amd64.tar.gz temp
+	cd temp && tar -xzf go1.24.6.linux-amd64.tar.gz
 	mv temp/go /usr/local/
 	rm -dfr temp
 
@@ -239,13 +252,8 @@ starship:
 	rm -dfr temp
 
 jira:
-	make wget
-	wget https://github.com/ankitpokhrel/jira-cli/releases/download/v1.6.0/jira_1.6.0_linux_x86_64.tar.gz
-	mkdir -p temp
-	mv jira_1.6.0_linux_x86_64.tar.gz temp
-	cd temp && tar -xzf jira_1.6.0_linux_x86_64.tar.gz
-	sudo cp temp/jira_1.6.0_linux_x86_64/bin/jira /usr/local/bin/
-	rm -dfr temp
+	go install github.com/ankitpokhrel/jira-cli/cmd/jira@issue-891
+	sudo ln -vsf ${HOME}/go/bin/jira /usr/local/bin/jira
 
 nushell:
 	make wget
@@ -327,11 +335,9 @@ zsh:
 cmatrix:
 	sudo apt install cmatrix -y
 
-gh: 
-	sudo apt install gh -y
-
 fzf: 
-	sudo apt install fzf -y
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install
 
 fzy: 
 	sudo apt install fzy -y
@@ -565,3 +571,28 @@ jtbl:
 	cd temp && tar -xzf jtbl-1.6.0-linux-x86_64.tar.gz
 	mv temp/jtbl /usr/local/bin
 	rm -dfr temp
+
+nvcat:
+	make wget
+	wget https://github.com/brianhuster/nvcat/releases/download/v0.1.5/nvcat_0.1.5_linux_amd64.tar.gz
+	mkdir -p temp
+	mv nvcat_0.1.5_linux_amd64.tar.gz temp
+	cd temp && tar -xzf nvcat_0.1.5_linux_amd64.tar.gz
+	mv temp/nvcat /usr/local/bin
+	rm -dfr temp
+	
+gh: 
+	make wget
+	wget https://github.com/cli/cli/releases/download/v2.76.2/gh_2.76.2_linux_amd64.tar.gz
+	mkdir -p temp
+	mv gh_2.76.2_linux_amd64.tar.gz temp
+	cd temp && tar -xzf gh_2.76.2_linux_amd64.tar.gz
+	mv temp/gh_2.76.2_linux_amd64/bin/gh /usr/local/bin
+	rm -dfr temp
+
+bob:
+	# rustup update
+	cargo install bob-nvim
+
+zoxide:
+	cargo install zoxide

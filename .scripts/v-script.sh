@@ -3,9 +3,13 @@ source ~/.local/share/zsh/z/zsh-z.plugin.zsh
 
 # FZF_BORDER_LABEL=" t - smart tmux session manager "
 if [ "$TMUX" = "" ]; then
-    ZOXIDE_RESULT=$(z | fzf --tac --exact --no-sort --reverse | awk '{print $2}')
+    ZOXIDE_RESULT=$(zoxide query -l -s | fzf --exact --no-sort --reverse | awk '{print $2}')
 else
-    ZOXIDE_RESULT=$(z | fzf-tmux --tac --exact --no-sort -p --reverse | awk '{print $2}')
+    ZOXIDE_RESULT=$(zoxide query -l -s | fzf-tmux --exact --no-sort -p --reverse | awk '{print $2}')
+fi
+
+if [ -n "$ZOXIDE_RESULT" ]; then
+    zoxide add "$ZOXIDE_RESULT" # Add directory to zoxide
 fi
 
 FOLDER=$(basename "$ZOXIDE_RESULT")
