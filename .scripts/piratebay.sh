@@ -10,6 +10,8 @@ fi
 
 # Define all subcategories with their IDs
 declare -A categories=(
+  [all]=0
+
   [audio:music]=101
   [audio:audio_books]=102
   [audio:sound_clips]=103
@@ -51,10 +53,19 @@ declare -A categories=(
   [other:covers]=604
   [other:physibles]=605
   [other:other]=699
+
+  [porn:all]=500
+  [porn:movies]=501
+  [porn:movies_dvdr]=502
+  [porn:pictures]=503
+  [porn:games]=504
+  [porn:hd_movies]=505
+  [porn:movie_clips]=506
+  [porn:other]=599
 )
 
-# Display only subcategories for selection
-selection=$(printf "%s\n" "${!categories[@]}" | sort | fzf --prompt="Select subcategory: ")
+# Display only subcategories for selection including 'all'
+selection=$(printf "%s\n" "${!categories[@]}" | sort | fzf --prompt="Select subcategory (or 'all'): ")
 
 if [ -z "$selection" ]; then
   echo "No selection made."
@@ -64,7 +75,21 @@ fi
 # Output selected key and ID
 echo "You selected: $selection (ID: ${categories[$selection]})"
 
-# link=$(xh POST https://apibay.org/q.php cat==401 q=="$search" | jq -r '.[] | "\(.seeders) \(.name) magnet:?xt=urn:btih:\(.info_hash)"' | fzf --no-sort | awk '{print $4}')
-link=$(xh POST https://apibay.org/q.php cat=${categories[$selection]} q=="$search" | jq -r '.[] | "\(.seeders) \(.name) magnet:?xt=urn:btih:\(.info_hash)"' | fzf --no-sort | awk '{print $NF}')
+# Build query based on selection
+if [[ "$selection" == "all" ]]; then
+  query_url="https://apibay.org/q.php?q=$search"
+else
+  query_url="https://apibay.org/q.php?cat=${categories[$selection]}&q=$search"
+fi
+
+# Fetch, display results with fzf, and extract selected magnet link
+link=$(xh POST "$query_url" | jq -r '.[] | "\(.seeders) \(.name) magnet:?xt=urn:btih:\(.info_hash)"' | fzf --no-sort | awk '{print $NF}')
 echo $link
-cd /mnt/c/Users/Stiwie/AppData/Roaming/Microsoft/Windows/Start\ Menu/Programs/WebTorrent && powershell.exe -c "./WebTorrent.lnk $link"
+if [ -z "$link" ]; then
+  echo "No link selected."
+  exit 1
+fi
+
+# Launch with WebTorrent in Windows
+cd "/mnt/c/Users/Stiwie/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/WebTorrent" && powershell.exe -c "./WebTorrent.lnk $link"
+
