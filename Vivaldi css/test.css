@@ -1,0 +1,19 @@
+#browser.native.linux #header,
+#browser.native.win #header {
+    min-height: 0px;
+    overflow: visible;
+    height: 0px;
+    z-index: 5;
+    color: transparent; /* Makes text transparent */
+}
+
+#browser.native #titlebar {
+    top: 4px;
+    color: transparent; /* Makes text transparent */
+}
+
+#browser.native .toolbar.toolbar-addressbar {
+    padding-left: 35px;
+    color: transparent; /* Makes text transparent */
+}
+

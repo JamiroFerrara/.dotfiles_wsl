@@ -547,6 +547,16 @@ rundeck:
 	rsync -a temp/rd-2.0.9/lib/ /usr/local/lib
 	rm -dfr temp
 
+jtbl:
+	make wget
+	make rsync
+	wget https://github.com/kellyjonbrazil/jtbl/releases/download/v1.6.0/jtbl-1.6.0-linux-x86_64.tar.gz
+	mkdir -p temp
+	mv jtbl-1.6.0-linux-x86_64.tar.gz temp
+	cd temp && tar -xzf jtbl-1.6.0-linux-x86_64.tar.gz
+	mv temp/jtbl /usr/local/bin/
+	rm -dfr temp
+
 opencode:
 	curl -fsSL https://raw.githubusercontent.com/opencode-ai/opencode/refs/heads/main/install | bash
 
