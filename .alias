@@ -3,7 +3,7 @@
 alias aws="aws --endpoint-url https://stiwie-test.s3.eu-central-1.wasabisys.com --no-verify-ssl"
 alias transfer="/home/jferrara/.scripts/aws-transfer.sh"
 
-alias hosts="batcat /mnt/c/Windows/System32/drivers/etc/hosts"
+alias hosts="nvim /mnt/c/Windows/System32/drivers/etc/hosts"
 
 # [Basics]
 alias ls="exa -la --icons"
@@ -29,6 +29,8 @@ alias lines="tokei"
 alias ch="cheat"
 alias ipinfo="curl ipinfo.io"
 alias profile="repeat 10 time zsh -i -c exit"
+alias grep="rg"
+alias vpnt="~/.scripts/vpn-toolkit.sh"
 # alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 
 # [Make]
@@ -49,7 +51,6 @@ alias rb="powershell.exe C://Users/j.ferrara/scripts/reboot.ps1"
 
 # [Git]
 alias lg="lazygit"
-alias status="tmux neww git log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gitlines="git diff --stat HEAD~1..HEAD"
 
