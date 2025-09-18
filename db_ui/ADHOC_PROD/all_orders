@@ -2,7 +2,7 @@ DECLARE @Seriale NVARCHAR(50);
 
 -- Adjust the data type and size as needed
 SET
-    @Seriale = '7e57f669-8284-11f0-abbf-026a3238d89a';
+    @Seriale = 'f2dfc644-7430-11f0-abbf-026a3238d89a';
 
 SELECT
     TOP 10 *

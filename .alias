@@ -31,6 +31,9 @@ alias ipinfo="curl ipinfo.io"
 alias profile="repeat 10 time zsh -i -c exit"
 alias grep="rg"
 alias vpnt="~/.scripts/vpn-toolkit.sh"
+alias powershell="powershell.exe"
+alias pws="powershell.exe"
+alias win="cd /mnt/c/Users/JFerrara/"
 # alias fzf="fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}'"
 
 # [Make]

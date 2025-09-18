@@ -1,0 +1,16 @@
+SELECT
+    customer_product_purchase.*,
+    customer.code AS customer_code,
+    SUBSTRING_INDEX(destination_code, '-', -1) AS destination_code,
+    product.product_code
+FROM
+    customer_product_purchase
+    INNER JOIN customer ON customer.id = customer_product_purchase.customer_id
+    INNER JOIN destination ON destination.id = customer_product_purchase.destination_id
+    INNER JOIN product ON product.id = customer_product_purchase.product_id
+WHERE
+    customer.code = '0011380'
+    AND destination.destination_code = '00000'
+    AND product.product_code = 'DG271'
+
+-- 0011380-00000-DG271

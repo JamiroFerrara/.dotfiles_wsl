@@ -1,0 +1,21 @@
+SELECT
+    REPLACE(CodiceCliente, ' ', '_') AS CodiceCliente,
+    REPLACE(CodiceDestinazione, ' ', '_') AS CodiceDestinazione,
+    REPLACE(CodiceArticolo, ' ', '_') AS CodiceArticolo
+FROM
+    DETERULTACQ_CLIE
+WHERE
+    CodiceCliente = '0009435'
+    AND CodiceDestinazione = '00001'
+    AND CodiceArticolo = 'N4040E090506';
+
+SELECT
+    REPLACE(CodiceCliente, ' ', '_') AS CodiceCliente,
+    REPLACE(CodiceDestinazione, ' ', '_') AS CodiceDestinazione,
+    REPLACE(CodiceArticolo, ' ', '_') AS CodiceArticolo
+FROM
+    DETERULTACQ_CLIE
+WHERE
+    CodiceCliente = '0009395'
+    AND CodiceDestinazione = '00006'
+    AND CodiceArticolo = 'HC010';
